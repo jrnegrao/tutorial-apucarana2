@@ -39,6 +39,7 @@ Bem-vindo ao tutorial da aplicação **Consulta de Viabilidade Econômica**! Est
 A parte central da tela mostra um mapa do município de Apucarana com a localização dos terrenos, zoneamentos e áreas de interesse.
 
 ![Mapa Principal](./img/mapa-principal.png)
+
 *Mapa interativo do município de Apucarana*
 
 > 💡 Você pode ampliar (zoom) e mover o mapa usando o mouse. Use a rodinha do mouse para zoom!
@@ -53,6 +54,7 @@ A parte central da tela mostra um mapa do município de Apucarana com a localiza
 - **Viabilidade:** Análise de viabilidade econômica
 
 ![Painel Lateral Direito](./img/painel-lateral-direito.png)
+
 *Painel lateral direito com abas de consulta*
 
 ### 3️⃣ Controles do Mapa
@@ -75,6 +77,7 @@ Na parte superior da tela você encontra:
 - **Ícones** no canto direito: camadas, lista, grid, régua, impressora e gráfico
 
 ![Barra Superior](./img/barra-superior.png)
+
 *Barra superior da aplicação*
 
 ---
@@ -97,6 +100,7 @@ Entenda cada elemento do mapa e o que suas cores representam:
 | ❌ | Vermelho (tracejado) | Perímetro Urbano e Distrital |
 
 ![Legenda Completa](./img/legenda-completa.png)
+
 *Legenda completa do mapa*
 
 ---
@@ -134,6 +138,7 @@ O zoneamento define o tipo de atividade permitida em cada área.
 | **ZI2** | #CCCCCC (Cinza Claro) | Zona Industrial |
 
 ![Zoneamento Completo](./img/zoneamento-completo.png)
+
 *Mapa com todos os zoneamentos*
 
 > ⚠️ Cada zoneamento tem restrições específicas. Consulte a prefeitura para detalhes sobre o que é permitido em cada zona.
@@ -147,6 +152,7 @@ O zoneamento define o tipo de atividade permitida em cada área.
 Na parte superior, há uma barra de busca onde você pode digitar endereço ou lugar.
 
 ![Barra de Busca](./img/barra-busca.png)
+
 *Barra de busca superior*
 
 ### 2️⃣ Busque por Inscrição Cadastral
@@ -167,6 +173,7 @@ Após digitar a inscrição, clique no botão **"Próximo >"** para avançar.
 O mapa irá centralizar no lote encontrado e exibirá as informações no painel direito.
 
 ![Resultado da Busca](./img/resultado-busca.png)
+
 *Resultado da busca no mapa*
 
 > ⚠️ Se a busca não encontrar resultado, verifique se digitou corretamente a inscrição ou endereço.

@@ -32,7 +32,7 @@ Bem-vindo ao tutorial da aplicação **Consulta de Viabilidade Econômica**! Est
 
 ---
 
-<a name="#a-intereface">## 🖥️ A Interface</a>
+<a name="a-intereface">## 🖥️ A Interface</a>
 
 ### 1️⃣ O Mapa Interativo Central
 
@@ -44,7 +44,7 @@ A parte central da tela mostra um mapa do município de Apucarana com a localiza
 
 > 💡 Você pode ampliar (zoom) e mover o mapa usando o mouse. Use a rodinha do mouse para zoom!
 
-<a name="#a-interface">### 2️⃣ O Painel Lateral Direito</a>
+<a name="a-interface">### 2️⃣ O Painel Lateral Direito</a>
 
 À direita, você encontra as abas de consulta com as seguintes opções:
 
@@ -82,7 +82,7 @@ Na parte superior da tela você encontra:
 
 ---
 
-<a name="#legendas-e-cores">## 🎨 Legendas e Cores</a>
+<a name="legendas-e-cores">## 🎨 Legendas e Cores</a>
 
 Entenda cada elemento do mapa e o que suas cores representam:
 
@@ -105,7 +105,7 @@ Entenda cada elemento do mapa e o que suas cores representam:
 
 ---
 
-<a name="#zoneamento">## 📊 Zoneamento - Tipos de Uso</a>
+<a name="zoneamento">## 📊 Zoneamento - Tipos de Uso</a>
 
 O zoneamento define o tipo de atividade permitida em cada área.
 
@@ -145,7 +145,7 @@ O zoneamento define o tipo de atividade permitida em cada área.
 
 ---
 
-<a name="#como-buscar">## 🔍 Como Buscar um Terreno</a>
+<a name="como-buscar">## 🔍 Como Buscar um Terreno</a>
 
 ### 1️⃣ Use a Barra de Busca Superior
 
@@ -180,7 +180,7 @@ O mapa irá centralizar no lote encontrado e exibirá as informações no painel
 
 ---
 
-<a name="#casos-práticos">## 💼 Casos Práticos</a>
+<a name="casos-práticos">## 💼 Casos Práticos</a>
 
 ### Caso 1: Encontrar Terreno para Comércio
 

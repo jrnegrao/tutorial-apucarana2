@@ -1,3 +1,5 @@
+![Logo GeoAPUC](./img/geoapuc.png)
+
 # 📘 Tutorial: Consulta de Viabilidade Econômica  
 
 **Município de Apucarana - Guia Prático de Uso**  

@@ -1,4 +1,6 @@
-![Logo GeoAPUC](./img/geoapuc.png)
+<p align="center">
+  <img src="./img/1781114229805_image.png" alt="Logo GeoAPUC" width="200"/>
+</p>
 
 # 📘 Tutorial: Consulta de Viabilidade Econômica  
 

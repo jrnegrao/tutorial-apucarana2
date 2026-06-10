@@ -4,22 +4,21 @@
 
 ---  
 
-## 📑 Índice  1️⃣ O Mapa Interativo Central
-
+## 📑 Índice  
 
 1. [Introdução](#introdução)  
 2. [A Interface](#a-interface)  
 3. [Legendas e Cores](#legendas-e-cores)  
 4. [Zoneamento](#zoneamento)  
 5. [Como Buscar](#como-buscar)  
-6. [Casos Práticos](#casos-práticos)  
-7. [FAQ](#faq)  
-8. [Classificação de Atividades](#classificacao-de-atividades)  
-9. [Relatório de Viabilidade](#relatorio-de-viabilidade)  
+6. [Classificação de Atividades](#classificação-de-atividades)  
+7. [Relatório de Viabilidade](#relatório-de-viabilidade)  
+8. [Casos Práticos](#casos-práticos)  
+9. [FAQ](#faq)  
 
 ---  
 
-<a name="introdução">## 🎯 Introdução</a>  
+## 🎯 Introdução <a name="introdução"></a>
 
 Bem-vindo ao tutorial da aplicação **Consulta de Viabilidade Econômica**! Esta ferramenta foi desenvolvida para ajudar você a consultar informações sobre terrenos e avaliar a viabilidade econômica de empreendimentos no município de Apucarana.  
 
@@ -35,7 +34,7 @@ Bem-vindo ao tutorial da aplicação **Consulta de Viabilidade Econômica**! Est
 
 ---  
 
-<a name="a-intereface">## 🖥️ A Interface</a>  
+## 🖥️ A Interface <a name="a-interface"></a>
 
 ### 1️⃣ O Mapa Interativo Central  
 
@@ -47,7 +46,7 @@ A parte central da tela mostra um mapa do município de Apucarana com a localiza
 
 > 💡 Você pode ampliar (zoom) e mover o mapa usando o mouse. Use a rodinha do mouse para zoom!  
 
-<a name="a-interface">### 2️⃣ O Painel Lateral Direito</a>  
+### 2️⃣ O Painel Lateral Direito  
 
 À direita, você encontra as abas de consulta com as seguintes opções:  
 
@@ -85,7 +84,7 @@ Na parte superior da tela você encontra:
 
 ---  
 
-<a name="legendas-e-cores">## 🎨 Legendas e Cores</a>  
+## 🎨 Legendas e Cores <a name="legendas-e-cores"></a>
 
 Entenda cada elemento do mapa e o que suas cores representam:  
 
@@ -108,7 +107,7 @@ Entenda cada elemento do mapa e o que suas cores representam:
 
 ---  
 
-<a name="zoneamento">## 📊 Zoneamento - Tipos de Uso</a>  
+## 📊 Zoneamento - Tipos de Uso <a name="zoneamento"></a>
 
 O zoneamento define o tipo de atividade permitida em cada área.  
 
@@ -148,7 +147,7 @@ O zoneamento define o tipo de atividade permitida em cada área.
 
 ---  
 
-<a name="como-buscar">## 🔍 Como Buscar um Terreno</a>  
+## 🔍 Como Buscar um Terreno <a name="como-buscar"></a>
 
 ### 1️⃣ Use a Barra de Busca Superior  
 
@@ -181,11 +180,15 @@ O mapa irá centralizar no lote encontrado e exibirá as informações no painel
 
 ### 5️⃣ Informações da Inscrição  
 
-Após clicar em "Próximo", você verá a classificação da atividade e sua viabilidade.  Vamos escolher um tipo de serviço que pretende-se investigar a viabilidade de implantação de acordo com o zoneamento da cidade
+Após clicar em "Próximo", você verá a classificação da atividade e sua viabilidade. Vamos escolher um tipo de serviço que pretende-se investigar a viabilidade de implantação de acordo com o zoneamento da cidade.
 
 Exemplo: Subclasse - padaria
 
-Para esse exemplo, vamos escolher mais de uma opção porque pretende-se exercer várias atividades dentro do mesmo ramo "padaria"
+Para esse exemplo, vamos escolher mais de uma opção porque pretende-se exercer várias atividades dentro do mesmo ramo "padaria".
+
+---  
+
+## 🎯 Classificação de Atividades <a name="classificação-de-atividades"></a>
 
 ![Classificação de Atividades](./img/classificacao-atividades.png)  
 
@@ -193,10 +196,9 @@ Para esse exemplo, vamos escolher mais de uma opção porque pretende-se exercer
 
 ### 6️⃣ Validação do Endereço
 
-É necessário realizar um chech-in para validação do endereço. Caso as informações estejam corretas, clique em "Dados corretos"
+É necessário realizar um check-in para validação do endereço. Caso as informações estejam corretas, clique em "Dados corretos".
 
-
-![Validacao de Endereco](./img/validacao-endereco.png) 
+![Validação de Endereço](./img/validacao-endereco.png)  
 
 *Validação do Endereço*
 
@@ -204,34 +206,30 @@ Neste momento, o sistema realiza uma análise espacial para verificar a permissi
 
 Como foram selecionados três CNAEs para o estabelecimento, o sistema processa as informações e apresenta ao usuário o resultado da análise, indicando a situação de cada atividade em relação à permissibilidade de uso e ocupação do solo.
 
-### 6️⃣ Analise Espacial 
+### 7️⃣ Análise Espacial
 
-![Analise Espacial](./img/analise-espacial.png)
+![Análise Espacial](./img/analise-espacial.png)
 
-Resultado da análise de permissibilidade de uso
+*Resultado da análise de permissibilidade de uso*
 
 De acordo com a análise realizada com base no zoneamento municipal vigente, é permitido o exercício das seguintes atividades no endereço informado:
 
-a) 1062-7/00 – Moagem de trigo e fabricação de derivados
-b) 1091-1/01 – Fabricação de produtos de panificação industrial
+a) 1062-7/00 – Moagem de trigo e fabricação de derivados  
+b) 1091-1/01 – Fabricação de produtos de panificação industrial  
 
 Entretanto, para a atividade:
 
 c) 2821-6/01 – Fabricação de fornos industriais, aparelhos e equipamentos não elétricos para instalações térmicas, peças e acessórios
 
-o resultado da análise indica que não é permitido o seu exercício no local informado.
+o resultado da análise indica que **não é permitido** o seu exercício no local informado.
 
-Aviso
+> ⚠️ **Aviso:** O imóvel está situado em Zona Comercial Um (ZC1), conforme disposto no Anexo X da Lei Complementar Municipal nº 08/20. Em razão das restrições estabelecidas pelo zoneamento vigente, as atividades classificadas como não permitidas não poderão ser desenvolvidas no endereço solicitado. Dessa forma, o CNAE 2821-6/01 somente poderá constar no cadastro caso a respectiva atividade não seja efetivamente exercida neste local.
 
-O imóvel está situado em Zona Comercial Um (ZC1), conforme disposto no Anexo X da Lei Complementar Municipal nº 08/20.
+Clique em **"Gerar Relatório"**.
 
-Em razão das restrições estabelecidas pelo zoneamento vigente, as atividades classificadas como não permitidas não poderão ser desenvolvidas no endereço solicitado.
+---
 
-Dessa forma, o CNAE 2821-6/01 somente poderá constar no cadastro caso a respectiva atividade não seja efetivamente exercida neste local.
-
-Clique em "Gerar Relatório"
-
-### 6️⃣ Relatório Gerado  
+## 📄 Relatório de Viabilidade <a name="relatório-de-viabilidade"></a>
 
 Após completar a consulta, um relatório de viabilidade será gerado.  
 
@@ -241,7 +239,7 @@ Após completar a consulta, um relatório de viabilidade será gerado.
 
 ---  
 
-<a name="casos-práticos">## 💼 Casos Práticos</a>  
+## 💼 Casos Práticos <a name="casos-práticos"></a>
 
 ### Caso 1: Encontrar Terreno para Comércio  
 
@@ -279,7 +277,7 @@ Após completar a consulta, um relatório de viabilidade será gerado.
 
 ---  
 
-<a name="faq">## ❓ FAQ - Perguntas Frequentes</a>  
+## ❓ FAQ - Perguntas Frequentes <a name="faq"></a>
 
 **Como saber a viabilidade econômica de um terreno?**  
 Após buscar o terreno, clique na aba **"Viabilidade"** no painel direito. Lá você encontrará informações sobre a viabilidade econômica do empreendimento.  

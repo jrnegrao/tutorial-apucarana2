@@ -169,7 +169,7 @@ O formato da inscrição é:
 
 ### 3️⃣ Clique em "Próximo"  
 
-Após digitar a inscrição, clique no botão **"Próximo >"** para avançar.  
+Após digitar a inscrição 101.024.0076.001 o imóvel foi encontrado na Rua Osório Ribas de Paula, 590 – sede centro, clique no botão **"Próximo >"** para avançar.  
 
 ### 4️⃣ Visualize o Resultado  
 
@@ -181,7 +181,7 @@ O mapa irá centralizar no lote encontrado e exibirá as informações no painel
 
 ### 5️⃣ Informações da Inscrição  
 
-Após clicar em "Próximo", você verá a classificação da atividade e sua viabilidade.  
+Após clicar em "Próximo", você verá a classificação da atividade e sua viabilidade.  Vamos escolher um tipo de serviço que pretende-se investigar a viabilidade de implantação de acordo com o zoneamento da cidade
 
 ![Classificação de Atividades](./img/classificacao-atividades.png)  
 

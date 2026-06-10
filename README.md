@@ -183,9 +183,21 @@ O mapa irá centralizar no lote encontrado e exibirá as informações no painel
 
 Após clicar em "Próximo", você verá a classificação da atividade e sua viabilidade.  Vamos escolher um tipo de serviço que pretende-se investigar a viabilidade de implantação de acordo com o zoneamento da cidade
 
+Exemplo: Subclasse - padaria
+
+Para esse exemplo, vamos escolher mais de uma opção porque pretende-se exercer várias atividades dentro do mesmo ramo "padaria"
+
 ![Classificação de Atividades](./img/classificacao-atividades.png)  
 
 *Classificação das atividades*  
+
+### 6️⃣ Validação do Endereço
+
+É necessário fazer um "chechin" para validação do endereço, se estiver tudo correto, clica-se em Dados corretos
+
+
+
+![Validacao de Endereco](./img/validacao-endereco.png) 
 
 ### 6️⃣ Relatório Gerado  
 

@@ -193,11 +193,43 @@ Para esse exemplo, vamos escolher mais de uma opção porque pretende-se exercer
 
 ### 6️⃣ Validação do Endereço
 
-É necessário fazer um "chechin" para validação do endereço, se estiver tudo correto, clica-se em Dados corretos
-
+É necessário realizar um chech-in para validação do endereço. Caso as informações estejam corretas, clique em "Dados corretos"
 
 
 ![Validacao de Endereco](./img/validacao-endereco.png) 
+
+*Validação do Endereço*
+
+Neste momento, o sistema realiza uma análise espacial para verificar a permissibilidade da atividade no local informado, considerando os parâmetros urbanísticos vigentes e as disposições estabelecidas pelo Plano Diretor Municipal.
+
+Como foram selecionados três CNAEs para o estabelecimento, o sistema processa as informações e apresenta ao usuário o resultado da análise, indicando a situação de cada atividade em relação à permissibilidade de uso e ocupação do solo.
+
+### 6️⃣ Analise Espacial 
+
+![Analise Espacial](./img/analise-espacial.png)
+
+Resultado da análise de permissibilidade de uso
+
+De acordo com a análise realizada com base no zoneamento municipal vigente, é permitido o exercício das seguintes atividades no endereço informado:
+
+a) 1062-7/00 – Moagem de trigo e fabricação de derivados
+b) 1091-1/01 – Fabricação de produtos de panificação industrial
+
+Entretanto, para a atividade:
+
+c) 2821-6/01 – Fabricação de fornos industriais, aparelhos e equipamentos não elétricos para instalações térmicas, peças e acessórios
+
+o resultado da análise indica que não é permitido o seu exercício no local informado.
+
+Aviso
+
+O imóvel está situado em Zona Comercial Um (ZC1), conforme disposto no Anexo X da Lei Complementar Municipal nº 08/20.
+
+Em razão das restrições estabelecidas pelo zoneamento vigente, as atividades classificadas como não permitidas não poderão ser desenvolvidas no endereço solicitado.
+
+Dessa forma, o CNAE 2821-6/01 somente poderá constar no cadastro caso a respectiva atividade não seja efetivamente exercida neste local.
+
+Clique em "Gerar Relatório"
 
 ### 6️⃣ Relatório Gerado  
 

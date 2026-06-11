@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutorial: Consulta de Viabilidade Econômica | GeoAPUC</title>
+<style>
+  :root{
+    --azul-vibrante:#4285F4;
+    --marinho:#1A2942;
+    --laranja:#F5A623;
+    --cinza-claro:#F4F6F9;
+    --branco:#FFFFFF;
+    --texto:#2D3748;
+    --texto-claro:#6B7A90;
+    --borda:#E2E8F0;
+    --sidebar-w:280px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  body{
+    font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color:var(--texto);
+    background:var(--cinza-claro);
+    line-height:1.65;
+  }
+
+  /* ========== CAPA ========== */
+  .cover{
+    position:relative;
+    min-height:100vh;
+    background:var(--branco);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    overflow:hidden;
+  }
+
+  .cover::after{
+    content:"";
+    position:absolute;
+    top:-10%;
+    right:-15%;
+    width:65%;
+    height:140%;
+    background:var(--azul-vibrante);
+    transform:rotate(18deg);
+    z-index:0;
+  }
+
+  .cover-content{
+    position:relative;
+    z-index:1;
+    max-width:900px;
+    padding:0 6%;
+  }
+
+  .badge{
+    display:inline-block;
+    background:var(--laranja);
+    color:var(--branco);
+    font-weight:700;
+    font-size:.8rem;
+    letter-spacing:.08em;
+    padding:.6rem 1.4rem;
+    border-radius:6px;
+    margin-bottom:2rem;
+    text-transform:uppercase;
+  }
+
+  .cover h1{
+    font-size:clamp(2.5rem, 6vw, 4.2rem);
+    font-weight:800;
+    color:var(--marinho);
+    line-height:1.15;
+    margin-bottom:2rem;
+    letter-spacing:-.02em;
+  }
+
+  .cover-sub{
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--marinho);
+    max-width:520px;
+    margin-bottom:3rem;
+  }
+
+  .cover-footer{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+  }
+
+  .cover-footer img{
+    height:60px;
+    width:auto;
+  }
+
+  .cover-footer span{
+    font-weight:700;
+    color:var(--marinho);
+    font-size:1rem;
+  }
+
+  .scroll-hint{
+    position:absolute;
+    bottom:2.5rem;
+    left:6%;
+    z-index:1;
+    font-size:.85rem;
+    color:var(--texto-claro);
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+  }
+
+  .scroll-hint::after{
+    content:"↓";
+    animation:bounce 1.6s infinite;
+  }
+
+  @keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(6px);}
+  }
+
+  /* ========== LAYOUT PRINCIPAL ========== */
+  .layout{
+    display:flex;
+    align-items:flex-start;
+  }
+
+  /* ========== SIDEBAR ========== */
+  .sidebar{
+    width:var(--sidebar-w);
+    flex-shrink:0;
+    background:var(--marinho);
+    color:var(--branco);
+    height:100vh;
+    position:sticky;
+    top:0;
+    overflow-y:auto;
+    padding:2rem 1.5rem;
+  }
+
+  .sidebar-logo{
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    margin-bottom:2.5rem;
+    padding-bottom:1.5rem;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+
+  .sidebar-logo img{
+    height:38px;
+    width:auto;
+  }
+
+  .sidebar-logo span{
+    font-size:.78rem;
+    color:rgba(255,255,255,.6);
+    text-transform:uppercase;
+    letter-spacing:.08em;
+  }
+
+  .sidebar h3{
+    font-size:.75rem;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:var(--laranja);
+    margin-bottom:1rem;
+    font-weight:700;
+  }
+
+  .sidebar nav ul{
+    list-style:none;
+  }
+
+  .sidebar nav li{
+    margin-bottom:.3rem;
+  }
+
+  .sidebar nav a{
+    display:flex;
+    align-items:center;
+    gap:.7rem;
+    color:rgba(255,255,255,.75);
+    text-decoration:none;
+    font-size:.92rem;
+    padding:.6rem .7rem;
+    border-radius:6px;
+    transition:all .15s ease;
+  }
+
+  .sidebar nav a:hover{
+    background:rgba(255,255,255,.06);
+    color:var(--branco);
+  }
+
+  .sidebar nav a .num{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background:rgba(255,255,255,.1);
+    font-size:.75rem;
+    font-weight:700;
+    flex-shrink:0;
+  }
+
+  .sidebar nav a:hover .num{
+    background:var(--azul-vibrante);
+  }
+
+  /* ========== CONTEÚDO ========== */
+  .content{
+    flex:1;
+    max-width:880px;
+    padding:3.5rem 4rem 6rem;
+  }
+
+  .content h2{
+    font-size:2rem;
+    font-weight:800;
+    color:var(--marinho);
+    margin:3.5rem 0 1.2rem;
+    padding-bottom:.7rem;
+    border-bottom:3px solid var(--laranja);
+    display:inline-block;
+  }
+
+  .content h2:first-of-type{
+    margin-top:0;
+  }
+
+  .content h3{
+    font-size:1.3rem;
+    font-weight:700;
+    color:var(--azul-vibrante);
+    margin:2rem 0 .8rem;
+  }
+
+  .content p{
+    margin-bottom:1rem;
+    color:var(--texto);
+  }
+
+  .content ul, .content ol{
+    margin:0 0 1.2rem 1.5rem;
+  }
+
+  .content li{
+    margin-bottom:.4rem;
+  }
+
+  .content img{
+    max-width:100%;
+    border-radius:10px;
+    border:1px solid var(--borda);
+    box-shadow:0 4px 16px rgba(26,41,66,.08);
+    margin:1rem 0 .5rem;
+  }
+
+  .caption{
+    font-size:.85rem;
+    color:var(--texto-claro);
+    font-style:italic;
+    margin-bottom:1.5rem;
+  }
+
+  /* Caixas de destaque */
+  .box{
+    border-radius:10px;
+    padding:1.2rem 1.5rem;
+    margin:1.5rem 0;
+    display:flex;
+    gap:.9rem;
+    align-items:flex-start;
+  }
+
+  .box-icon{
+    font-size:1.4rem;
+    flex-shrink:0;
+    line-height:1.4;
+  }
+
+  .box-dica{
+    background:#EAF2FE;
+    border-left:4px solid var(--azul-vibrante);
+  }
+
+  .box-atencao{
+    background:#FFF6E8;
+    border-left:4px solid var(--laranja);
+  }
+
+  .box-exemplo{
+    background:#F0F9F0;
+    border-left:4px solid #4CAF50;
+  }
+
+  .box strong{
+    color:var(--marinho);
+  }
+
+  /* Tabelas */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:1rem 0 1.5rem;
+    font-size:.92rem;
+  }
+
+  th{
+    background:var(--marinho);
+    color:var(--branco);
+    text-align:left;
+    padding:.7rem 1rem;
+    font-weight:600;
+  }
+
+  th:first-child{border-radius:8px 0 0 0;}
+  th:last-child{border-radius:0 8px 0 0;}
+
+  td{
+    padding:.65rem 1rem;
+    border-bottom:1px solid var(--borda);
+  }
+
+  tr:nth-child(even) td{
+    background:var(--cinza-claro);
+  }
+
+  code{
+    background:var(--cinza-claro);
+    border:1px solid var(--borda);
+    padding:.15rem .45rem;
+    border-radius:4px;
+    font-family:'Consolas', monospace;
+    font-size:.88em;
+    color:var(--azul-vibrante);
+  }
+
+  /* Passos numerados */
+  .step{
+    display:flex;
+    gap:1.2rem;
+    margin:1.8rem 0;
+    align-items:flex-start;
+  }
+
+  .step-num{
+    flex-shrink:0;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:var(--azul-vibrante);
+    color:var(--branco);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:1.1rem;
+  }
+
+  .step-body{flex:1;}
+  .step-body h3{margin:0 0 .5rem;}
+
+  hr{
+    border:none;
+    border-top:1px solid var(--borda);
+    margin:2.5rem 0;
+  }
+
+  /* Rodapé */
+  .footer{
+    background:var(--marinho);
+    color:rgba(255,255,255,.7);
+    padding:3rem 4rem;
+    text-align:center;
+  }
+
+  .footer strong{color:var(--branco);}
+
+  .footer a{color:var(--laranja);text-decoration:none;}
+
+  .back-to-top{
+    display:inline-block;
+    margin-top:1.5rem;
+    color:var(--azul-vibrante);
+    background:rgba(255,255,255,.08);
+    padding:.6rem 1.4rem;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:.9rem;
+    transition:background .15s ease;
+  }
+
+  .back-to-top:hover{background:rgba(255,255,255,.15);}
+
+  /* Responsivo */
+  @media (max-width: 900px){
+    .layout{flex-direction:column;}
+    .sidebar{
+      width:100%;
+      height:auto;
+      position:relative;
+      padding:1.5rem;
+    }
+    .content{padding:2rem 1.5rem 4rem;}
+    .footer{padding:2.5rem 1.5rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ CAPA ============ -->
+<header class="cover" id="topo">
+  <div class="cover-content">
+    <span class="badge">Tutorial Prático</span>
+    <h1>Consulta de<br>Viabilidade Econômica</h1>
+    <p class="cover-sub">
+      Aprenda a consultar terrenos, interpretar zoneamentos e gerar relatórios
+      de viabilidade econômica para empreendimentos no município de Apucarana.
+    </p>
+    <div class="cover-footer">
+      <img src="./img/geoapuc.png" alt="Logo GeoAPUC">
+      <span>IDEPPLAN | Prefeitura de Apucarana</span>
+    </div>
+  </div>
+  <div class="scroll-hint">Role para começar</div>
+</header>
+
+<!-- ============ LAYOUT: SIDEBAR + CONTEÚDO ============ -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="./img/geoapuc.png" alt="GeoAPUC">
+      <span>Índice</span>
+    </div>
+    <h3>Conteúdo do Tutorial</h3>
+    <nav>
+      <ul>
+        <li><a href="#introducao"><span class="num">1</span> Introdução</a></li>
+        <li><a href="#interface"><span class="num">2</span> A Interface</a></li>
+        <li><a href="#legendas"><span class="num">3</span> Legendas e Cores</a></li>
+        <li><a href="#zoneamento"><span class="num">4</span> Zoneamento</a></li>
+        <li><a href="#buscar"><span class="num">5</span> Como Buscar</a></li>
+        <li><a href="#classificacao"><span class="num">6</span> Classificação de Atividades</a></li>
+        <li><a href="#relatorio"><span class="num">7</span> Relatório de Viabilidade</a></li>
+        <li><a href="#casos"><span class="num">8</span> Casos Práticos</a></li>
+        <li><a href="#faq"><span class="num">9</span> FAQ</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- CONTEÚDO -->
+  <main class="content">
+
+    <!-- INTRODUÇÃO -->
+    <section id="introducao">
+      <h2>🎯 Introdução</h2>
+      <p>
+        Bem-vindo ao tutorial da aplicação <strong>Consulta de Viabilidade Econômica</strong>!
+        Esta ferramenta foi desenvolvida para ajudar você a consultar informações sobre
+        terrenos e avaliar a viabilidade econômica de empreendimentos no município de Apucarana.
+      </p>
+
+      <h3>O que você vai aprender:</h3>
+      <ul>
+        <li>Como acessar e navegar na aplicação</li>
+        <li>Entender o mapa interativo e suas legendas</li>
+        <li>Conhecer os diferentes zoneamentos</li>
+        <li>Realizar buscas por inscrição cadastral</li>
+        <li>Interpretar as informações de viabilidade e relatórios gerados</li>
+      </ul>
+
+      <div class="box box-dica">
+        <div class="box-icon">💡</div>
+        <div>
+          <strong>Dica do professor:</strong> este tutorial leva aproximadamente
+          20 minutos para ser concluído. Use o menu ao lado para navegar
+          diretamente até a seção que você precisa.
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- A INTERFACE -->
+    <section id="interface">
+      <h2>🖥️ A Interface</h2>
+
+      <h3>1️⃣ O Mapa Interativo Central</h3>
+      <p>
+        A parte central da tela mostra um mapa do município de Apucarana com a
+        localização dos terrenos, zoneamentos e áreas de interesse.
+      </p>
+      <img src="./img/mapa-principal.png" alt="Mapa Principal">
+      <p class="caption">Mapa interativo do município de Apucarana</p>
+
+      <div class="box box-dica">
+        <div class="box-icon">💡</div>
+        <div>Você pode ampliar (zoom) e mover o mapa usando o mouse. Use a rodinha do mouse para zoom!</div>
+      </div>
+
+      <h3>2️⃣ O Painel Lateral Direito</h3>
+      <p>À direita, você encontra as abas de consulta com as seguintes opções:</p>
+      <ul>
+        <li><strong>Inscrição:</strong> Busca por inscrição cadastral do terreno</li>
+        <li><strong>CNAE:</strong> Atividades econômicas permitidas</li>
+        <li><strong>Endereço:</strong> Busca por localização</li>
+        <li><strong>Viabilidade:</strong> Análise de viabilidade econômica</li>
+      </ul>
+      <img src="./img/painel-lateral-direito.png" alt="Painel Lateral Direito">
+      <p class="caption">Painel lateral direito com abas de consulta</p>
+
+      <h3>3️⃣ Controles do Mapa</h3>
+      <p>À esquerda do mapa, você encontra os botões de controle:</p>
+      <ul>
+        <li><strong>+/-</strong> Zoom in e zoom out</li>
+        <li><strong>🏠</strong> Voltar para a visão inicial</li>
+        <li><strong>⬅️➡️</strong> Navegar entre visualizações anteriores</li>
+        <li><strong>⬆️</strong> Bússola / orientação do mapa</li>
+        <li><strong>ℹ️</strong> Informações</li>
+        <li><strong>🗑️</strong> Limpar seleção</li>
+      </ul>
+
+      <h3>4️⃣ Barra Superior</h3>
+      <p>Na parte superior da tela você encontra:</p>
+      <ul>
+        <li><strong>Logo GeoAPUC</strong> e título da aplicação</li>
+        <li><strong>Barra de busca</strong> central: "Encontrar endereço ou lugar"</li>
+        <li><strong>Ícones</strong> no canto direito: camadas, lista, grid, régua, impressora e gráfico</li>
+      </ul>
+      <img src="./img/barra-superior.png" alt="Barra Superior">
+      <p class="caption">Barra superior da aplicação</p>
+    </section>
+
+    <hr>
+
+    <!-- LEGENDAS E CORES -->
+    <section id="legendas">
+      <h2>🎨 Legendas e Cores</h2>
+      <p>Entenda cada elemento do mapa e o que suas cores representam:</p>
+
+      <h3>📍 Mapa Cadastral</h3>
+      <table>
+        <tr><th>Símbolo</th><th>Cor</th><th>Significado</th></tr>
+        <tr><td>🟨</td><td>Amarelo (#FFFF99)</td><td>Lotes - Terrenos e propriedades urbanas</td></tr>
+      </table>
+
+      <h3>🏛️ Dados da Prefeitura</h3>
+      <table>
+        <tr><th>Símbolo</th><th>Cor</th><th>Significado</th></tr>
+        <tr><td>📍</td><td>Azul (#87CEEB)</td><td>Lagos - Corpos de água e reservatórios</td></tr>
+        <tr><td>❌</td><td>Vermelho (tracejado)</td><td>Perímetro Urbano e Distrital</td></tr>
+      </table>
+
+      <img src="./img/legenda-completa.png" alt="Legenda Completa">
+      <p class="caption">Legenda completa do mapa</p>
+    </section>
+
+    <hr>
+
+    <!-- ZONEAMENTO -->
+    <section id="zoneamento">
+      <h2>📊 Zoneamento - Tipos de Uso</h2>
+      <p>O zoneamento define o tipo de atividade permitida em cada área.</p>
+
+      <h3>🏘️ Zoneamento Residencial (ZR)</h3>
+      <table>
+        <tr><th>Zona</th><th>Cor</th><th>Descrição</th></tr>
+        <tr><td><strong>ZR1</strong></td><td>#FFFFCC (Amarelo Claro)</td><td>Zona Residencial 1</td></tr>
+        <tr><td><strong>ZR2</strong></td><td>#FFE0B2 (Bege)</td><td>Zona Residencial 2</td></tr>
+        <tr><td><strong>ZR3</strong></td><td>#FFCC99 (Laranja Claro)</td><td>Zona Residencial 3</td></tr>
+        <tr><td><strong>ZR5</strong></td><td>#999999 (Cinza)</td><td>Zona Residencial 5</td></tr>
+      </table>
+
+      <h3>💼 Zoneamento Especializado (ZE)</h3>
+      <table>
+        <tr><th>Zona</th><th>Cor</th><th>Descrição</th></tr>
+        <tr><td><strong>ZEA</strong></td><td>#ADD8E6 (Azul Claro)</td><td>Zona Especializada Administrativa</td></tr>
+        <tr><td><strong>ZEC28</strong></td><td>#FFAACC (Rosa)</td><td>Zona Especializada Comercial</td></tr>
+        <tr><td><strong>ZER28</strong></td><td>#FFAACC (Rosa)</td><td>Zona Especializada Residencial</td></tr>
+        <tr><td><strong>ZEOC</strong></td><td>#E6CCFF (Roxo Claro)</td><td>Zona Especializada de Comércio</td></tr>
+        <tr><td><strong>ZEPC</strong></td><td>#CCFFCC (Verde Claro)</td><td>Zona Especializada de Produção</td></tr>
+      </table>
+
+      <h3>🌳 Outros Zoneamentos</h3>
+      <table>
+        <tr><th>Zona</th><th>Cor</th><th>Descrição</th></tr>
+        <tr><td><strong>ZPC</strong></td><td>#FFAA99 (Salmão)</td><td>Zona de Proteção da Comunidade</td></tr>
+        <tr><td><strong>ZRCH</strong></td><td>#90EE90 (Verde)</td><td>Zona de Patrimônio Histórico</td></tr>
+        <tr><td><strong>ZP</strong></td><td>#FFDDAA (Amarelo Forte)</td><td>Zona de Proteção</td></tr>
+        <tr><td><strong>ZI2</strong></td><td>#CCCCCC (Cinza Claro)</td><td>Zona Industrial</td></tr>
+      </table>
+
+      <img src="./img/zoneamento-completo.png" alt="Zoneamento Completo">
+      <p class="caption">Mapa com todos os zoneamentos</p>
+
+      <div class="box box-atencao">
+        <div class="box-icon">⚠️</div>
+        <div>Cada zoneamento tem restrições específicas. Consulte a prefeitura para detalhes sobre o que é permitido em cada zona.</div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- COMO BUSCAR -->
+    <section id="buscar">
+      <h2>🔍 Como Buscar um Terreno</h2>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Use a Barra de Busca Superior</h3>
+          <p>Na parte superior, há uma barra de busca onde você pode digitar endereço ou lugar.</p>
+          <img src="./img/barra-busca.png" alt="Barra de Busca">
+          <p class="caption">Barra de busca superior</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Busque por Inscrição Cadastral</h3>
+          <p>No painel lateral direito, clique na aba <strong>"Inscrição"</strong> e digite o número no campo indicado.</p>
+          <p>O formato da inscrição é:</p>
+          <p><code>109.011.0204.001</code> ou <code>103.068.0123.001</code></p>
+          <div class="box box-dica">
+            <div class="box-icon">💡</div>
+            <div>Se não souber a inscrição, use a aba <strong>"Endereço"</strong> para buscar pela rua ou bairro.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Clique em "Próximo"</h3>
+          <p>Após digitar a inscrição <code>101.024.0076.001</code> o imóvel foi encontrado na Rua Osório Ribas de Paula, 590 – sede centro, clique no botão <strong>"Próximo &gt;"</strong> para avançar.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Visualize o Resultado</h3>
+          <p>O mapa irá centralizar no lote encontrado e exibirá as informações no painel direito.</p>
+          <img src="./img/resultado-busca.png" alt="Resultado da Busca">
+          <p class="caption">Resultado da busca no mapa</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h3>Informações da Inscrição</h3>
+          <p>
+            Após clicar em "Próximo", você verá a classificação da atividade e sua viabilidade.
+            Vamos escolher um tipo de serviço que pretende-se investigar a viabilidade de
+            implantação de acordo com o zoneamento da cidade.
+          </p>
+          <div class="box box-exemplo">
+            <div class="box-icon">📋</div>
+            <div>
+              <strong>Exemplo prático:</strong> Subclasse - padaria.<br>
+              Para esse exemplo, vamos escolher mais de uma opção porque pretende-se exercer
+              várias atividades dentro do mesmo ramo "padaria".
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- CLASSIFICAÇÃO DE ATIVIDADES -->
+    <section id="classificacao">
+      <h2>🎯 Classificação de Atividades</h2>
+      <img src="./img/classificacao-atividades.png" alt="Classificação de Atividades">
+      <p class="caption">Classificação das atividades</p>
+
+      <h3>6️⃣ Validação do Endereço</h3>
+      <p>
+        É necessário realizar um check-in para validação do endereço.
+        Caso as informações estejam corretas, clique em "Dados corretos".
+      </p>
+      <img src="./img/validacao-endereco.png" alt="Validação de Endereço">
+      <p class="caption">Validação do Endereço</p>
+
+      <p>
+        Neste momento, o sistema realiza uma análise espacial para verificar a permissibilidade
+        da atividade no local informado, considerando os parâmetros urbanísticos vigentes e as
+        disposições estabelecidas pelo Plano Diretor Municipal.
+      </p>
+      <p>
+        Como foram selecionados três CNAEs para o estabelecimento, o sistema processa as
+        informações e apresenta ao usuário o resultado da análise, indicando a situação de
+        cada atividade em relação à permissibilidade de uso e ocupação do solo.
+      </p>
+
+      <h3>7️⃣ Análise Espacial</h3>
+      <img src="./img/analise-espacial.png" alt="Análise Espacial">
+      <p class="caption">Resultado da análise de permissibilidade de uso</p>
+
+      <p>
+        De acordo com a análise realizada com base no zoneamento municipal vigente,
+        é <strong>permitido</strong> o exercício das seguintes atividades no endereço informado:
+      </p>
+      <ul>
+        <li><strong>1062-7/00</strong> – Moagem de trigo e fabricação de derivados</li>
+        <li><strong>1091-1/01</strong> – Fabricação de produtos de panificação industrial</li>
+      </ul>
+
+      <p>Entretanto, para a atividade:</p>
+      <ul>
+        <li><strong>2821-6/01</strong> – Fabricação de fornos industriais, aparelhos e equipamentos não elétricos para instalações térmicas, peças e acessórios</li>
+      </ul>
+      <p>o resultado da análise indica que <strong>não é permitido</strong> o seu exercício no local informado.</p>
+
+      <div class="box box-atencao">
+        <div class="box-icon">⚠️</div>
+        <div>
+          <strong>Aviso:</strong> O imóvel está situado em Zona Comercial Um (ZC1), conforme
+          disposto no Anexo X da Lei Complementar Municipal nº 08/20. Em razão das restrições
+          estabelecidas pelo zoneamento vigente, as atividades classificadas como não permitidas
+          não poderão ser desenvolvidas no endereço solicitado. Dessa forma, o CNAE 2821-6/01
+          somente poderá constar no cadastro caso a respectiva atividade não seja efetivamente
+          exercida neste local.
+        </div>
+      </div>
+
+      <p>Clique em <strong>"Gerar Relatório"</strong>.</p>
+    </section>
+
+    <hr>
+
+    <!-- RELATÓRIO -->
+    <section id="relatorio">
+      <h2>📄 Relatório de Viabilidade</h2>
+      <p>Após completar a consulta, um relatório de viabilidade será gerado.</p>
+      <img src="./img/relatorio-gerado.png" alt="Relatório Gerado">
+      <p class="caption">Relatório de viabilidade gerado com sucesso!</p>
+    </section>
+
+    <hr>
+
+    <!-- CASOS PRÁTICOS -->
+    <section id="casos">
+      <h2>💼 Casos Práticos</h2>
+
+      <h3>Caso 1: Encontrar Terreno para Comércio</h3>
+      <p><strong>Objetivo:</strong> Buscar lotes em zona comercial ou especializada.</p>
+      <p><strong>Passos:</strong></p>
+      <ol>
+        <li>Na legenda, identifique as zonas comerciais: <strong>ZEC28, ZEOC e ZPC</strong></li>
+        <li>O mapa mostrará as áreas correspondentes nas cores indicadas</li>
+        <li>Use a barra de busca para encontrar endereços nessas zonas</li>
+        <li>Clique no lote para ver a inscrição e viabilidade</li>
+      </ol>
+
+      <h3>Caso 2: Verificar Zoneamento de um Endereço</h3>
+      <p><strong>Objetivo:</strong> Saber qual é o zoneamento de um terreno específico.</p>
+      <p><strong>Passos:</strong></p>
+      <ol>
+        <li>Busque o endereço na barra de busca superior</li>
+        <li>O mapa vai centralizar no local</li>
+        <li>Verifique a cor da área no mapa</li>
+        <li>Consulte a tabela de zoneamento para entender as regras</li>
+      </ol>
+
+      <h3>Caso 3: Identificar Propriedade pelo Cadastro</h3>
+      <p><strong>Objetivo:</strong> Localizar um terreno usando sua inscrição cadastral.</p>
+      <p><strong>Passos:</strong></p>
+      <ol>
+        <li>No painel direito, clique na aba <strong>"Inscrição"</strong></li>
+        <li>Digite a inscrição: <code>109.011.0204.001</code></li>
+        <li>Clique em <strong>"Próximo &gt;"</strong></li>
+        <li>O mapa vai centralizar no lote e exibir todos os dados</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>❓ FAQ - Perguntas Frequentes</h2>
+
+      <h3>Como saber a viabilidade econômica de um terreno?</h3>
+      <p>Após buscar o terreno, clique na aba <strong>"Viabilidade"</strong> no painel direito. Lá você encontrará informações sobre a viabilidade econômica do empreendimento.</p>
+
+      <h3>O que é CNAE?</h3>
+      <p>CNAE (Classificação Nacional de Atividades Econômicas) indica que tipo de atividades econômicas são permitidas naquele terreno. Exemplo: comércio, serviços, indústria.</p>
+
+      <h3>Os dados são atualizados?</h3>
+      <p>Sim, os dados são atualizados conforme novas informações são registradas na prefeitura.</p>
+
+      <h3>Posso usar esse mapa como prova legal?</h3>
+      <p>Este mapa é informativo. Para questões legais e documentos oficiais, procure a <strong>Idepplan</strong> - Instituto de Desenvolvimento, Pesquisa e Planejamento de Apucarana.</p>
+
+      <h3>A aplicação funciona em celular?</h3>
+      <p>Sim! A aplicação é responsiva e funciona bem em smartphones e tablets. Acesse pelo navegador do seu dispositivo.</p>
+
+      <h3>Encontrei um erro nos dados. Como reportar?</h3>
+      <p>Entre em contato com a Idepplan - Prefeitura de Apucarana através do email: <strong>sic@apucarana.pr.gov.br</strong></p>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="footer">
+  <p><strong>Tutorial - Consulta de Viabilidade Econômica | Apucarana - PR</strong></p>
+  <p style="margin-top:.8rem;">
+    📧 Email: <a href="mailto:suporte@apucarana.gov.br">suporte@apucarana.gov.br</a><br>
+    📱 Tel: (43) 3422-4000
+  </p>
+  <p style="margin-top:1rem; font-size:.85rem;">Última atualização: 2026 | Município de Apucarana - PR</p>
+  <a href="#topo" class="back-to-top">↑ Voltar ao topo</a>
+</footer>
+
+</body>
+</html>

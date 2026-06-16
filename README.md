@@ -117,31 +117,31 @@ O zoneamento define o tipo de atividade permitida em cada área.
 
 ### 🏘️ Zoneamento Residencial (ZR)  
 
-| Zona | Cor | Descrição |  
-|------|-----|-----------|  
-| **ZR1** | #FFFFCC (Amarelo Claro) | Zona Residencial 1 |  
-| **ZR2** | #FFE0B2 (Bege) | Zona Residencial 2 |  
-| **ZR3** | #FFCC99 (Laranja Claro) | Zona Residencial 3 |  
-| **ZR5** | #999999 (Cinza) | Zona Residencial 5 |  
+| Zona | Descrição |  
+|------|-----------|  
+| **ZR1** | Zona Residencial 1 |  
+| **ZR2** | Zona Residencial 2 |  
+| **ZR3** | Zona Residencial 3 |  
+| **ZR5** | Zona Residencial 5 |  
 
 ### 💼 Zoneamento Especializado (ZE)  
 
-| Zona | Cor | Descrição |  
-|------|-----|-----------|  
-| **ZEA** | #ADD8E6 (Azul Claro) | Zona Especializada Administrativa |  
-| **ZEC28** | #FFAACC (Rosa) | Zona Especializada Comercial |  
-| **ZER28** | #FFAACC (Rosa) | Zona Especializada Residencial |  
-| **ZEOC** | #E6CCFF (Roxo Claro) | Zona Especializada de Comércio |  
-| **ZEPC** | #CCFFCC (Verde Claro) | Zona Especializada de Produção |  
+| Zona | Descrição |  
+|------|-----------|  
+| **ZEA** | Zona Especializada Administrativa |  
+| **ZEC28** | Zona Especializada Comercial |  
+| **ZER28** | Zona Especializada Residencial |  
+| **ZEOC** | Zona Especializada de Comércio |  
+| **ZEPC** | Zona Especializada de Produção |  
 
 ### 🌳 Outros Zoneamentos  
 
-| Zona | Cor | Descrição |  
-|------|-----|-----------|  
-| **ZPC** | #FFAA99 (Salmão) | Zona de Proteção da Comunidade |  
-| **ZRCH** | #90EE90 (Verde) | Zona de Patrimônio Histórico |  
-| **ZP** | #FFDDAA (Amarelo Forte) | Zona de Proteção |  
-| **ZI2** | #CCCCCC (Cinza Claro) | Zona Industrial |  
+| Zona | Descrição |  
+|------|-----------|  
+| **ZPC** | Zona de Proteção da Comunidade |  
+| **ZRCH** | Zona de Patrimônio Histórico |  
+| **ZP** | Zona de Proteção |  
+| **ZI2** | Zona Industrial |  
 
 ![Zoneamento Completo](./img/zoneamento-completo.png)  
 

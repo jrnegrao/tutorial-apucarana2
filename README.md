@@ -119,29 +119,43 @@ O zoneamento define o tipo de atividade permitida em cada área.
 
 | Zona | Descrição |  
 |------|-----------|  
-| **ZR1** | Zona Residencial 1 |  
-| **ZR2** | Zona Residencial 2 |  
-| **ZR3** | Zona Residencial 3 |  
-| **ZR5** | Zona Residencial 5 |  
+| **ZR1** | I - Zona Residencial Um – zona predominantemente residencial |  
+| **ZR2** | II - Zona Residencial Dois – zona predominantemente residencial |  
+| **ZR3** | III - Zona Residencial Três – zona predominantemente residencial, com maior permissividade de atividades de comércio e serviços |  
+| **ZR4** | IV - Zona Residencial Quatro – zona residencial onde se localizam os núcleos e conjuntos habitacionais |  
+| **ZR5** | V - Zona Residencial Cinco – zona predominantemente residencial |  
+| **ZR28** | VI - Zona Residencial do Vinte e Oito – zona predominantemente residencial que compreende os lotes pertencentes à região denominada 28 de janeiro |  
+| **ZRCH** | VII - Zona Residencial de Chácaras – zona predominantemente residencial |  
+| **ZOC** | VIII - Zona de Ocupação Controlada – área de interesse para fins do abastecimento hídrico, respeitando os critérios aplicáveis |  
 
-### 💼 Zoneamento Especializado (ZE)  
-
-| Zona | Descrição |  
-|------|-----------|  
-| **ZEA** | Zona Especializada Administrativa |  
-| **ZEC28** | Zona Especializada Comercial |  
-| **ZER28** | Zona Especializada Residencial |  
-| **ZEOC** | Zona Especializada de Comércio |  
-| **ZEPC** | Zona Especializada de Produção |  
-
-### 🌳 Outros Zoneamentos  
+### 🛍️ Zonas ou Eixos de Comércio e Serviços (ZC)  
 
 | Zona | Descrição |  
 |------|-----------|  
-| **ZPC** | Zona de Proteção da Comunidade |  
-| **ZRCH** | Zona de Patrimônio Histórico |  
-| **ZP** | Zona de Proteção |  
-| **ZI2** | Zona Industrial |  
+| **ZC1** | I - Zona Comercial Um – zona central predominantemente com usos comerciais e serviços centrais e com número livre de pavimentos nos edifícios |  
+| **ZC2** | II - Zona Comercial Dois – zona central predominantemente com usos comerciais e serviços centrais; na sede, encontra-se predominantemente na zona de transição entre o centro e os bairros a sul; nos distritos de Pirapó e Vila Reis está presente na área central |  
+| **ZC3** | III - Zona Comercial Três – zona central com usos comerciais e serviços centrais; na sede localizada na região da Barra Funda e Avenida Minas Gerais; nos distritos atua como zona de transição entre zonas industriais e residenciais |  
+| **ZC4** | IV - Zona Comercial Quatro – zona de comércio e serviços de escala local, com edifícios e até 3 (três) pavimentos |  
+| **ZC5** | V - Zona Comercial Cinco – zona de comércio e serviços, localizada no entorno do Lago Jaboti |  
+| **ZC28** | VI - Zona Comercial do Vinte e Oito – zona predominantemente de comércio e serviços que compreende os lotes pertencentes à região denominada 28 de janeiro |  
+
+### 🏭 Zonas Industriais (ZI)  
+
+| Zona | Descrição |  
+|------|-----------|  
+| **ZI1** | I - Zona Industrial 1 – destinadas às atividades industriais incômodas, não nocivas ou perigosas, de baixo impacto ambiental |  
+| **ZI2** | II - Zona Industrial 2 – destinadas às atividades industriais incômodas ou nocivas, de maior porte e maior impacto ambiental |  
+
+### ✳️ Zonas de Caráter Especial (ZE e correlatas)  
+
+| Zona | Descrição |  
+|------|-----------|  
+| **ZE** | I - Zona Especial: área de domínio público municipal/estadual/federal com critérios de ocupação do solo e atividades específicas, a serem definidas pelo órgão municipal responsável |  
+| **ZEPC** | II - Zona Especial de Praças e Canteiros – praças e canteiros municipais não edificáveis |  
+| **ZEA** | III - Zona Especial de Adensamento – zonas próximas aos campi universitários, visando suprir demanda por habitação e atividades complementares |  
+| **ZEIS** | IV - Zona Especial de Interesse Social – áreas destinadas a programas sociais e regularização fundiária para habitações de interesse social |  
+| **ZEVR** | V - Zona Especial de Vilas Rurais – loteamentos residenciais implantados via Programa "Vila Rural" |  
+| **ZP** | VI - Zona de Preservação Ambiental – espaço territorial regido pela legislação ambiental, incluindo parques, reservas, APPs e áreas de proteção ambiental |  
 
 ![Zoneamento Completo](./img/zoneamento-completo.png)  
 

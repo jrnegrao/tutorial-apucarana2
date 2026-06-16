@@ -299,7 +299,7 @@ Este mapa é informativo. Para questões legais e documentos oficiais, procure a
 Sim! A aplicação é responsiva e funciona bem em smartphones e tablets. Acesse pelo navegador do seu dispositivo.  
 
 **Encontrei um erro nos dados. Como reportar?**  
-Entre em contato com a Idepplan - Prefeitura de Apucarana através do email: **sic@apucarana.pr.gov.br**  
+Entre em contato com a Idepplan - Prefeitura de Apucarana através do email: **idepplan@apucarana.pv.gov.br**  
 
 ---  
 
@@ -307,7 +307,7 @@ Entre em contato com a Idepplan - Prefeitura de Apucarana através do email: **s
 
 **Tutorial - Consulta de Viabilidade Econômica | Apucarana - PR**  
 
-📧 Email: [suporte@apucarana.gov.br](mailto:suporte@apucarana.gov.br)  
+📧 Email: [idepplan@apucarana.pv.gov.br](mailto:idepplan@apucarana.pv.gov.br)  
 📱 Tel: (43) 3422-4000  
 
 ---  

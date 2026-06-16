@@ -71,7 +71,7 @@ A parte central da tela mostra um mapa do município de Apucarana com a localiza
 - **🏠** Voltar para a visão inicial  
 - **⬅️➡️** Navegar entre visualizações anteriores  
 - **⬆️** Bússola / orientação do mapa  
-- **ℹ️** Informações  
+- **ℹ️** Exibe detalhes sobre os atributos de uma camada  
 - **🗑️** Limpar seleção  
 
 ### 4️⃣ Barra Superior  

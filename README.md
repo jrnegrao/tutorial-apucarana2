@@ -24,7 +24,7 @@
 
 ## 🎯 Introdução <a name="introdução"></a>
 
-Bem-vindo ao tutorial da aplicação **Consulta de Viabilidade Econômica**! Esta ferramenta foi desenvolvida para ajudar você a consultar informações sobre terrenos e avaliar a viabilidade econômica de empreendimentos no município de Apucarana.  
+Bem-vindo ao tutorial da aplicação **Consulta de Viabilidade Econômica**! Esta ferramenta foi desenvolvida para ajudar você a consultar informações sobre lotes e avaliar a viabilidade econômica de empreendimentos no município de Apucarana.  
 
 ### O que você vai aprender:  
 
@@ -42,7 +42,7 @@ Bem-vindo ao tutorial da aplicação **Consulta de Viabilidade Econômica**! Est
 
 ### 1️⃣ O Mapa Interativo Central  
 
-A parte central da tela mostra um mapa do município de Apucarana com a localização dos terrenos, zoneamentos e áreas de interesse.  
+A parte central da tela mostra um mapa do município de Apucarana com a localização dos lotes, zoneamentos e áreas de interesse.  
 
 ![Mapa Principal](./img/mapa-principal.png)  
 
@@ -54,7 +54,7 @@ A parte central da tela mostra um mapa do município de Apucarana com a localiza
 
 À direita, você encontra as abas de consulta com as seguintes opções:  
 
-- **Inscrição:** Busca por inscrição cadastral do terreno  
+- **Inscrição:** Busca por inscrição cadastral do lote  
 - **CNAE:** Atividades econômicas permitidas  
 - **Endereço:** Busca por localização  
 - **Viabilidade:** Análise de viabilidade econômica  
@@ -96,7 +96,7 @@ Entenda cada elemento do mapa e o que suas cores representam:
 
 | Símbolo | Cor | Significado |  
 |---------|-----|-------------|  
-| 🟨 | Amarelo (#FFFF99) | Lotes - Terrenos e propriedades urbanas |  
+| 🟨 | Amarelo (#FFFF99) | Lotes - Lotes e propriedades urbanas |  
 
 ### 🏛️ Dados da Prefeitura  
 
@@ -151,7 +151,7 @@ O zoneamento define o tipo de atividade permitida em cada área.
 
 ---  
 
-## 🔍 Como Buscar um Terreno <a name="como-buscar"></a>
+## 🔍 Como Buscar um Lote <a name="como-buscar"></a>
 
 ### 1️⃣ Use a Barra de Busca Superior  
 
@@ -245,7 +245,7 @@ Após completar a consulta, um relatório de viabilidade será gerado.
 
 ## 💼 Casos Práticos <a name="casos-práticos"></a>
 
-### Caso 1: Encontrar Terreno para Comércio  
+### Caso 1: Encontrar Lote para Comércio  
 
 **Objetivo:** Buscar lotes em zona comercial ou especializada.  
 
@@ -259,7 +259,7 @@ Após completar a consulta, um relatório de viabilidade será gerado.
 
 ### Caso 2: Verificar Zoneamento de um Endereço  
 
-**Objetivo:** Saber qual é o zoneamento de um terreno específico.  
+**Objetivo:** Saber qual é o zoneamento de um lote específico.  
 
 **Passos:**  
 1. Busque o endereço na barra de busca superior  
@@ -271,7 +271,7 @@ Após completar a consulta, um relatório de viabilidade será gerado.
 
 ### Caso 3: Identificar Propriedade pelo Cadastro  
 
-**Objetivo:** Localizar um terreno usando sua inscrição cadastral.  
+**Objetivo:** Localizar um lote usando sua inscrição cadastral.  
 
 **Passos:**  
 1. No painel direito, clique na aba **"Inscrição"**  
@@ -283,11 +283,11 @@ Após completar a consulta, um relatório de viabilidade será gerado.
 
 ## ❓ FAQ - Perguntas Frequentes <a name="faq"></a>
 
-**Como saber a viabilidade econômica de um terreno?**  
-Após buscar o terreno, clique na aba **"Viabilidade"** no painel direito. Lá você encontrará informações sobre a viabilidade econômica do empreendimento.  
+**Como saber a viabilidade econômica de um lote?**  
+Após buscar o lote, clique na aba **"Viabilidade"** no painel direito. Lá você encontrará informações sobre a viabilidade econômica do empreendimento.  
 
 **O que é CNAE?**  
-CNAE (Classificação Nacional de Atividades Econômicas) indica que tipo de atividades econômicas são permitidas naquele terreno. Exemplo: comércio, serviços, indústria.  
+CNAE (Classificação Nacional de Atividades Econômicas) indica que tipo de atividades econômicas são permitidas naquele lote. Exemplo: comércio, serviços, indústria.  
 
 **Os dados são atualizados?**  
 Sim, os dados são atualizados conforme novas informações são registradas na prefeitura.  
